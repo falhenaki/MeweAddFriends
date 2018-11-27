@@ -1,3 +1,6 @@
+#Author: Fawaz
+#https://github.com/falhenaki
+
 import requests
 import json
 from ast import literal_eval
