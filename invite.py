@@ -112,15 +112,13 @@ noadd = get_no_add_list()
 def main():
 
   login()
-  
   users = get_contact_list()
+  
   for user in users:
-
-    if user["id"] not in noadd and not user["iscontact"] and not user["iscontact"]:
+    if user["id"] not in noadd and not user["iscontact"]:
       r = add_user(user["id"])
       if r.status_code == 204:
-        print("added:" + user["name"])
-        
+        print("added:" + user["name"])        
         with open("noadd.txt", "a") as myfile:
           myfile.write(user["id"] + "\n")
       elif r.status_code == 400:
